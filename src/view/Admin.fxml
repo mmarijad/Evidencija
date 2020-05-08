@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="570.0" prefWidth="800.0" style="-fx-background-color: #ffe6cc; -fx-border-color: #fff; -fx-border-width: 3;" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Admin">
+
+   <children>
+      <Label layoutX="24.0" layoutY="14.0" prefHeight="31.0" prefWidth="98.0" text="Assistant's">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <Label layoutX="20.0" layoutY="30.0" prefHeight="32.0" prefWidth="98.0" text="Assistant">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="234.0" layoutY="71.0" prefHeight="39.0" prefWidth="333.0" text="Dobrodošli u administraciju">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <Separator layoutX="179.0" layoutY="121.0" prefHeight="2.0" prefWidth="452.0" style="-fx-border-color: #000000; -fx-background-color: #000000;" />
+      <Label layoutX="323.0" layoutY="141.0" prefHeight="31.0" prefWidth="168.0" text="Korisnici sustava">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="196.0" layoutY="209.0" text="Ime">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="196.0" layoutY="247.0" text="Prezime">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="196.0" layoutY="285.0" text="E-mail">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="196.0" layoutY="321.0" text="Lozinka">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nameTxt" layoutX="263.0" layoutY="205.0" prefHeight="25.0" prefWidth="306.0" />
+      <TextField fx:id="lastnameTxt" layoutX="263.0" layoutY="243.0" prefHeight="25.0" prefWidth="306.0" />
+      <TextField fx:id="emailTxt" layoutX="263.0" layoutY="281.0" prefHeight="25.0" prefWidth="306.0" />
+      <PasswordField fx:id="passwordTxt" layoutX="263.0" layoutY="317.0" prefHeight="25.0" prefWidth="306.0" />
+      <Button fx:id="addUserBtn" layoutX="351.0" layoutY="375.0" mnemonicParsing="false" onAction="#addUserToDatabase" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: #ccffee; -fx-border-color: #fff;" text="Dodaj korisnika">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Label fx:id="successLbl" layoutX="323.0" layoutY="348.0" prefHeight="5.0" prefWidth="246.0" text="Uspješno ste dodali korisnika." textFill="#1fd08c" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="errorLbl" layoutX="345.0" layoutY="350.0" prefHeight="20.0" prefWidth="160.0" text="Došlo je do pogreške." textFill="#e47f0b" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
