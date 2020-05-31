@@ -1,5 +1,10 @@
 package model;
 
+import controller.Login;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+import javax.sql.rowset.serial.SerialBlob;
 import java.lang.reflect.Field;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -182,13 +187,19 @@ public class Table {
             Object obj = Class.forName(cls.getName()).newInstance();
             Class<?> otherCls = obj.getClass();
             for (Field f : otherCls.getDeclaredFields()){
-                f.set(obj, rs.getObject(f.getName()));
+                if (SerialBlob.class.isAssignableFrom(f.getType())) {
+                    if (rs.getBlob(f.getName()) != null)
+                        f.set(obj, new SerialBlob(rs.getBlob(f.getName())));
+                } else {
+                    f.set(obj, rs.getObject(f.getName()));
+                }
             }
             return obj;
         } else {
             throw new Exception("No data with that id");
         }
     }
+
 
     public static List<?> list(Class cls) throws Exception {
         String tableName = getTableName(cls);
@@ -201,11 +212,39 @@ public class Table {
             Object obj = Class.forName(cls.getName()).newInstance();
             Class<?> otherCls = obj.getClass();
             for (Field f : otherCls.getDeclaredFields()){
-                f.set(obj, rs.getObject(f.getName()));
+                if (SerialBlob.class.isAssignableFrom(f.getType())) {
+                    if (rs.getBlob(f.getName()) != null)
+                        f.set(obj, new SerialBlob(rs.getBlob(f.getName())));
+                } else {
+                    f.set(obj, rs.getObject(f.getName()));
+                }
             }
             list.add(obj);
         }
         return list;
     }
 
+    public static List<?> usersList(Class cls) throws Exception {
+        String tableName = getTableName(cls);
+        int fk = Login.LoggedInUser.getId();
+        String SQL = "SELECT * FROM " + tableName + " WHERE userFK = " + fk;
+        Statement stmt = Database.CONNECTION.createStatement();
+        ResultSet rs = stmt.executeQuery(SQL);
+
+        List<Object> usersList = new ArrayList<>();
+        while(rs.next()){
+            Object obj = Class.forName(cls.getName()).newInstance();
+            Class<?> otherCls = obj.getClass();
+            for (Field f : otherCls.getDeclaredFields()){
+                if (SerialBlob.class.isAssignableFrom(f.getType())) {
+                    if (rs.getBlob(f.getName()) != null)
+                        f.set(obj, new SerialBlob(rs.getBlob(f.getName())));
+                } else {
+                    f.set(obj, rs.getObject(f.getName()));
+                }
+            }
+            usersList.add(obj);
+        }
+        return usersList;
+    }
 }

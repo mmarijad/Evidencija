@@ -39,7 +39,7 @@ public class Database{
     private static String hostname = "localhost";
     private static String user = "root";
     private static String password = "";
-    private static String database = "pjava";
+    private static String database = "aplikacija";
 
     public static Connection CONNECTION = null;
 

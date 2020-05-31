@@ -1,74 +1,202 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="570.0" prefWidth="800.0" style="-fx-background-color: #ffe6cc; -fx-border-color: #fff; -fx-border-width: 3;" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Admin">
+<AnchorPane opacity="0.8" prefHeight="707.0" prefWidth="1010.0" style="-fx-background-color: #fff; -fx-border-color: #02a7cf; -fx-border-width: 2;" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Admin">
 
    <children>
-      <Label layoutX="24.0" layoutY="14.0" prefHeight="31.0" prefWidth="98.0" text="Assistant's">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font></Label>
-      <Label layoutX="20.0" layoutY="30.0" prefHeight="32.0" prefWidth="98.0" text="Assistant">
-         <font>
-            <Font name="System Bold" size="22.0" />
-         </font>
-      </Label>
-      <Label layoutX="234.0" layoutY="71.0" prefHeight="39.0" prefWidth="333.0" text="Dobrodošli u administraciju">
-         <font>
-            <Font size="27.0" />
-         </font>
-      </Label>
-      <Separator layoutX="179.0" layoutY="121.0" prefHeight="2.0" prefWidth="452.0" style="-fx-border-color: #000000; -fx-background-color: #000000;" />
-      <Label layoutX="323.0" layoutY="141.0" prefHeight="31.0" prefWidth="168.0" text="Korisnici sustava">
-         <font>
-            <Font size="21.0" />
-         </font>
-      </Label>
-      <Label layoutX="196.0" layoutY="209.0" text="Ime">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Label>
-      <Label layoutX="196.0" layoutY="247.0" text="Prezime">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Label>
-      <Label layoutX="196.0" layoutY="285.0" text="E-mail">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Label>
-      <Label layoutX="196.0" layoutY="321.0" text="Lozinka">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Label>
-      <TextField fx:id="nameTxt" layoutX="263.0" layoutY="205.0" prefHeight="25.0" prefWidth="306.0" />
-      <TextField fx:id="lastnameTxt" layoutX="263.0" layoutY="243.0" prefHeight="25.0" prefWidth="306.0" />
-      <TextField fx:id="emailTxt" layoutX="263.0" layoutY="281.0" prefHeight="25.0" prefWidth="306.0" />
-      <PasswordField fx:id="passwordTxt" layoutX="263.0" layoutY="317.0" prefHeight="25.0" prefWidth="306.0" />
-      <Button fx:id="addUserBtn" layoutX="351.0" layoutY="375.0" mnemonicParsing="false" onAction="#addUserToDatabase" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: #ccffee; -fx-border-color: #fff;" text="Dodaj korisnika">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
-      <Label fx:id="successLbl" layoutX="323.0" layoutY="348.0" prefHeight="5.0" prefWidth="246.0" text="Uspješno ste dodali korisnika." textFill="#1fd08c" visible="false">
+      <Label fx:id="successLbl" layoutX="361.0" layoutY="447.0" prefHeight="20.0" prefWidth="194.0" text="Uspješno ste dodali korisnika." textFill="#1fd08c" visible="false">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="errorLbl" layoutX="345.0" layoutY="350.0" prefHeight="20.0" prefWidth="160.0" text="Došlo je do pogreške." textFill="#e47f0b" visible="false">
+      <Label fx:id="errorLbl" layoutX="371.0" layoutY="447.0" prefHeight="20.0" prefWidth="160.0" text="Došlo je do pogreške." textFill="#e47f0b" visible="false">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
+      <Label fx:id="error1Lbl" layoutX="337.0" layoutY="353.0" prefHeight="17.0" prefWidth="160.0" text="Molimo, popunite sva polja." textFill="#f2561d" visible="false" />
+      <Pane layoutX="2.0" opacity="0.8" prefHeight="932.0" prefWidth="225.0" style="-fx-border-color: #02a7cf; -fx-background-color: #fff;">
+         <children>
+            <Label fx:id="helloLbl" alignment="CENTER" layoutX="33.0" layoutY="89.0" prefHeight="82.0" prefWidth="160.0" style="-fx-border-color: #02a7cf; -fx-border-radius: 2;" text="Label" textAlignment="JUSTIFY" wrapText="true">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Button id="btn" fx:id="odjavaBtn" layoutX="32.0" layoutY="186.0" mnemonicParsing="false" onAction="#odjava" prefHeight="36.0" prefWidth="160.0" stylesheets="@../../style.css" text="Odjavite se">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button id="btn" fx:id="updateData" layoutX="33.0" layoutY="232.0" mnemonicParsing="false" onAction="#updateData" prefHeight="36.0" prefWidth="160.0" stylesheets="@../../style.css" text="Ažurirajte podatke" wrapText="true">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <TextField fx:id="adminNameTxt" layoutX="22.0" layoutY="353.0" prefHeight="25.0" prefWidth="160.0" visible="false" />
+            <TextField fx:id="adminLastNameTxt" layoutX="23.0" layoutY="388.0" prefHeight="25.0" prefWidth="160.0" visible="false" />
+            <TextField fx:id="adminEmailTxt" layoutX="23.0" layoutY="420.0" prefHeight="25.0" prefWidth="160.0" visible="false" />
+            <TextField fx:id="adminPasswordTxt" layoutX="24.0" layoutY="454.0" prefHeight="25.0" prefWidth="160.0" visible="false" />
+            <Button id="btn" fx:id="updateData1" layoutX="24.0" layoutY="494.0" mnemonicParsing="false" onAction="#updateData1" prefHeight="40.0" prefWidth="160.0" text="Spremi promjene" visible="false" wrapText="true">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button id="btn" fx:id="closeBtn" layoutX="24.0" layoutY="543.0" mnemonicParsing="false" onAction="#close" prefHeight="40.0" prefWidth="160.0" text="Odustani" visible="false" wrapText="true">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="66.0" layoutY="23.0" prefHeight="31.0" prefWidth="98.0" text="Assistant's">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="55.0" layoutY="44.0" prefHeight="36.0" prefWidth="115.0" text="Assistant">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <Button id="btn" fx:id="addUserBtn" layoutX="34.0" layoutY="280.0" mnemonicParsing="false" onAction="#openAddUser" prefHeight="36.0" prefWidth="160.0" stylesheets="@../../style.css" text="Dodaj korisnika" wrapText="true">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label fx:id="nameLbl" layoutX="34.0" layoutY="347.0" prefHeight="19.0" prefWidth="36.0" text="Ime" visible="false">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="nameTxt" layoutX="33.0" layoutY="365.0" prefHeight="25.0" prefWidth="160.0" visible="false" />
+            <Label fx:id="lastnameLbl" layoutX="33.0" layoutY="397.0" text="Prezime" visible="false">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="lastnameTxt" layoutX="33.0" layoutY="415.0" prefHeight="25.0" prefWidth="160.0" visible="false" />
+            <Label fx:id="emailLbl" layoutX="35.0" layoutY="447.0" text="E-mail" visible="false">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="emailTxt" layoutX="34.0" layoutY="466.0" prefHeight="25.0" prefWidth="160.0" visible="false" />
+            <Label fx:id="passwordLbl" layoutX="37.0" layoutY="500.0" text="Lozinka" visible="false">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="passwordTxt" layoutX="35.0" layoutY="518.0" prefHeight="25.0" prefWidth="160.0" visible="false" />
+            <CheckBox fx:id="adminChck" layoutX="58.0" layoutY="554.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="115.0" text="Administrator" visible="false" />
+            <Button id="btn" fx:id="saveUserBtn" layoutX="31.0" layoutY="582.0" mnemonicParsing="false" onAction="#addUserToDatabase" prefHeight="33.0" prefWidth="160.0" text="Dodaj korisnika" visible="false">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button id="btn" fx:id="cancelBtn" layoutX="31.0" layoutY="625.0" mnemonicParsing="false" onAction="#closeAddUser" prefHeight="33.0" prefWidth="160.0" text="Odustani" visible="false">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <VBox layoutX="287.0" layoutY="34.0" prefHeight="620.0" prefWidth="760.0">
+         <children>
+            <Label prefHeight="31.0" prefWidth="168.0" text="Korisnici sustava">
+               <font>
+                  <Font size="21.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <TableView fx:id="tableView" prefHeight="223.0" prefWidth="652.0" stylesheets="@../../style.css">
+              <columns>
+                <TableColumn fx:id="nameTblClmn" editable="true" onEditCommit="#editUserFirstName" prefWidth="150.0" text="Ime" />
+                <TableColumn fx:id="lastnameTblClmn" editable="true" onEditCommit="#editUserLastName" prefWidth="207.0" text="Prezime" />
+                  <TableColumn fx:id="emailTblClmn" prefWidth="93.0" text="Email" />
+                  <TableColumn fx:id="adminTblClmn" prefWidth="93.0" text="Uloga" />
+              </columns>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </TableView>
+            <HBox prefHeight="42.0" prefWidth="652.0">
+               <children>
+                        <Button id="btn" fx:id="deleteBtn" mnemonicParsing="false" onAction="#deleteUser" prefHeight="37.0" prefWidth="136.0" stylesheets="@../../style.css" text="Izbriši korisnika">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                        <Button fx:id="addToAdminBtn" mnemonicParsing="false" onAction="#addToAdmin" prefHeight="38.0" prefWidth="145.0" stylesheets="@../../style.css" text="Dodaj u administratore">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </HBox>
+            <Label prefHeight="46.0" prefWidth="250.0" text="Administratori sustava">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" right="10.0" top="10.0" />
+               </VBox.margin></Label>
+            <TableView fx:id="admintableView" layoutX="10.0" layoutY="41.0" prefHeight="239.0" prefWidth="652.0" stylesheets="@../../style.css">
+               <columns>
+                  <TableColumn fx:id="AnameTblClmn" editable="true" onEditCommit="#editUserFirstName" prefWidth="122.0" text="Ime" />
+                  <TableColumn fx:id="AlastnameTblClmn" editable="true" onEditCommit="#editUserLastName" prefWidth="160.0" text="Prezime" />
+                  <TableColumn fx:id="AemailTblClmn" prefWidth="176.0" text="Email" />
+                  <TableColumn fx:id="AadminTblClmn" prefWidth="143.0" text="Uloga" />
+               </columns>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </TableView>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                        <Button fx:id="moveFromAdminBtn" mnemonicParsing="false" onAction="#moveFromAdmin" prefHeight="29.0" prefWidth="145.0" stylesheets="@../../style.css" text="Ukloni iz administratora">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+               </children>
+            </HBox>
+
+         </children>
+
+      </VBox>
+
+
    </children>
 </AnchorPane>

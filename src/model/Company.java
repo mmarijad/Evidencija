@@ -9,5 +9,12 @@ public class Company extends Table {
 
     public String getName() { return name; }
 
+    @Override public String toString() { return this.getName(); }
+
     public void setName(String name) { this.name = name; }
+
+    public int getId() {
+        return id;
+    }
+
 }

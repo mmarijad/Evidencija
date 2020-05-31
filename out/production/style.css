@@ -1,0 +1,113 @@
+#pane{
+    -fx-background-image: url("http://www.allwhitebackground.com/images/6/Geometric-Background-Image.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 900 506;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
+
+#login{
+    -fx-background-image: url("https://image.flaticon.com/icons/png/512/1828/1828457.png");
+    -fx-background-size: 60 60;
+    -fx-background-repeat-repeat-style: no repeat;
+    -fx-opacity: 0.8;
+
+}
+
+#pane2{
+    -fx-background-image: url("http://www.allwhitebackground.com/images/6/Geometric-Background-Image.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 2000 1500;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
+#user{
+    -fx-background-image: url("https://image.flaticon.com/icons/png/512/747/747376.png");
+    -fx-background-size: 60 60;
+    -fx-background-repeat-repeat-style: no repeat;
+
+}
+
+#pane3{
+    -fx-background-image: url("http://www.allwhitebackground.com/images/6/Geometric-Background-Image.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-attachment: fixed;
+    -fx-background-size: 3000 3000;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
+.button{
+     -fx-border-color: #fff;
+     -fx-background-color: #e3f7fe;
+}
+.button:hover{
+    -fx-background-color: #b5e9fc;
+    -fx-border-color: #fff;
+}
+.date-chooser {
+    -fx-background-color:linear-gradient(white,#DDDDDD);
+}
+.btn{
+      -fx-background-color: #e3f7fe;
+      -fx-border: none;
+}
+.btn:hover{
+  -fx-background-color: #b5e9fc;
+}
+.btn2{
+       -fx-effect: dropshadow(two-pass-box , darkgray, 10, 0.0 , 4, 5);
+       -fx-background-color: rgba(235,235,235,0.5);
+       -fx-opacity: 0.9;
+       -fx-background-radius: 5 5 5 5;
+       -fx-background-insets: 2 2 2 2 ;
+       -fx-border-radius: 5 5 5 5;
+       -fx-border-color: none;
+}
+.btn2:hover{
+
+     -fx-background-color: rgba(225,225,225,0.9);
+    -fx-border-color: none;
+}
+
+.table-view{
+   -fx-background-color: transparent;
+}
+
+.table-view:focused{
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header-background{
+    -fx-background-color: #fff;
+}
+
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-view > .virtual-flow > .scroll-bar:vertical,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track-background,
+.table-view > .virtual-flow > .scroll-bar:horizontal,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track-background {
+    -fx-background-color: transparent;
+}
+
+.table-view > .virtual-flow > .scroll-bar > .increment-button,
+.table-view > .virtual-flow > .scroll-bar > .decrement-button {
+    -fx-opacity: 0;
+}
+.image-view-table-cell .image-view {
+   -fx-padding: 1;
+}
+.company_button {
+   -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+}
