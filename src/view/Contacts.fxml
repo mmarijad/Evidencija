@@ -80,7 +80,7 @@
          </children></Pane>
       <Pane layoutX="250.0" layoutY="72.0" opacity="0.8" prefHeight="613.0" prefWidth="935.0" style="-fx-background-color: #e3f7fe; -fx-border-color: #fff;">
          <children>
-            <Label fx:id="allLbl" layoutX="387.0" prefHeight="91.0" prefWidth="153.0" text="Vaši kontakti" textAlignment="CENTER" wrapText="true">
+            <Label fx:id="allLbl" layoutX="391.0" prefHeight="91.0" prefWidth="153.0" text="Vaši kontakti" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font size="18.0" />
                </font>

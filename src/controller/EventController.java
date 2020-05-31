@@ -115,7 +115,7 @@ public class EventController implements Initializable {
     }
 
     public void addNew(ActionEvent ev) {
-
+        datePicker.setValue(LocalDate.now());
         saveBtn.setVisible(true);
         closeBtn.setVisible(true);
         eventLbl.setText("Novi događaj");
@@ -139,7 +139,6 @@ public class EventController implements Initializable {
         String name = this.nameTxt.getText().toString();
         String description = this.descriptionTxt.getText().toString();
         String place = this.placeTxt.getText().toString();
-        datePicker.setValue(LocalDate.now());
         LocalDate ld = datePicker.getValue();
         Calendar c =  Calendar.getInstance();
         int hours = hoursComboBox.getValue();
@@ -187,6 +186,7 @@ public class EventController implements Initializable {
         try {
             e.save();
             this.populateTableView();
+            this.populateUpcomingTableView();
         } catch (Exception ex) {
             ex.printStackTrace();
            errorLbl.setText("Došlo je do pogreške: dodavanje novog događaja nije uspjelo.");
