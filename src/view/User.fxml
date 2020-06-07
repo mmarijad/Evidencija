@@ -60,7 +60,7 @@
                                   <TableColumn fx:id="evNameTblCol" editable="true" onEditCommit="#editEventName" prefWidth="193.0" text="Naziv" />
                                   <TableColumn fx:id="evTimeTblCol" prefWidth="188.0" text="Vrijeme" />
                                     <TableColumn fx:id="evPlaceTblCol" editable="true" onEditCommit="#editEventPlace" prefWidth="166.0" text="Mjesto" />
-                                    <TableColumn fx:id="evDescriptionTblCol" editable="true" onEditCommit="#editEventDescription" prefWidth="197.0" text="Opis" />
+                                    <TableColumn fx:id="evDescriptionTblCol" editable="true" onEditCommit="#editEventDescription" prefWidth="214.0" text="Opis" />
                                 </columns>
                                  <VBox.margin>
                                     <Insets left="10.0" right="10.0" />
@@ -94,7 +94,7 @@
                                   <TableColumn fx:id="nameTblClmn" onEditCommit="#editContactFirstName" prefWidth="178.0" text="Ime" />
                                   <TableColumn fx:id="lastnameTblClmn" onEditCommit="#editContactLastName" prefWidth="187.0" text="Prezime" />
                                     <TableColumn fx:id="phoneTblClmn" onEditCommit="#editContactPhoneNumber" prefWidth="199.0" text="Broj telefona" />
-                                    <TableColumn fx:id="emailTblClmn" onEditCommit="#editContactEmail" prefWidth="180.0" text="E-mail" />
+                                    <TableColumn fx:id="emailTblClmn" onEditCommit="#editContactEmail" prefWidth="197.0" text="E-mail" />
                                 </columns>
                                  <VBox.margin>
                                     <Insets left="10.0" right="10.0" />
@@ -122,8 +122,8 @@
                               </HBox>
                                <TableView fx:id="unreadNotesTableView" layoutX="43.0" layoutY="117.0" opacity="0.8" prefHeight="221.0" prefWidth="763.0">
                                    <columns>
-                                       <TableColumn fx:id="unreadTitleTblCol" prefWidth="280.0" text="Naslov" />
-                                       <TableColumn fx:id="unreadTextTblCol" prefWidth="360.0" text="Tekst" />
+                                       <TableColumn fx:id="unreadTitleTblCol" prefWidth="370.0" text="Naslov" />
+                                       <TableColumn fx:id="unreadTextTblCol" prefWidth="392.0" text="Tekst" />
                                    </columns>
                                  <VBox.margin>
                                     <Insets left="10.0" right="10.0" />
@@ -225,7 +225,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                       </Button>
-                  <Pane fx:id="eventPane" layoutX="12.0" layoutY="496.0" prefHeight="260.0" prefWidth="200.0" visible="false">
+                  <Pane fx:id="eventPane" layoutX="12.0" layoutY="496.0" prefHeight="331.0" prefWidth="200.0" visible="false">
                      <children>
                         <TextField fx:id="eventNameTxt" layoutX="49.0" layoutY="28.0" prefHeight="25.0" prefWidth="134.0" />
                         <Label layoutX="9.0" layoutY="34.0" text="Naziv" />
@@ -237,19 +237,18 @@
                         <ComboBox fx:id="minutesCombobox" layoutX="122.0" layoutY="162.0" prefHeight="25.0" prefWidth="64.0" />
                         <ComboBox fx:id="hoursCombobox" layoutX="52.0" layoutY="161.0" prefHeight="25.0" prefWidth="66.0" />
                         <Label layoutX="7.0" layoutY="133.0" prefHeight="17.0" prefWidth="46.0" text="Vrijeme" />
+                        <Label fx:id="eventErrorLbl" layoutX="64.0" layoutY="267.0" prefHeight="32.0" prefWidth="124.0" text="Došlo je do pogreške" textAlignment="CENTER" textFill="#940e0e" visible="false" wrapText="true" />
+                        <Label fx:id="eventSuccessLbl" layoutX="55.0" layoutY="253.0" prefHeight="53.0" prefWidth="119.0" text="Uspješno ste dodali događaj" textAlignment="CENTER" textFill="#00722e" visible="false" wrapText="true" />
                         <Button fx:id="saveEventBtn" layoutX="51.0" layoutY="195.0" mnemonicParsing="false" onAction="#saveEvent" prefHeight="25.0" prefWidth="135.0" text="Spremi" />
                         <Button fx:id="closeEventBtn" layoutX="51.0" layoutY="227.0" mnemonicParsing="false" onAction="#closeEvent" prefHeight="25.0" prefWidth="135.0" text="Odustani" />
                      </children>
                   </Pane>
-                  <Label fx:id="eventSuccessLbl" layoutX="64.0" layoutY="756.0" prefHeight="46.0" prefWidth="130.0" text="Uspješno ste dodali događaj" textAlignment="CENTER" textFill="#00722e" visible="false" wrapText="true" />
-                  <Label fx:id="eventErrorLbl" layoutX="70.0" layoutY="762.0" prefHeight="47.0" prefWidth="124.0" text="Došlo je do pogreške" textAlignment="CENTER" textFill="#940e0e" visible="false" wrapText="true" />
                   <Pane fx:id="contactPane" layoutX="16.0" layoutY="454.0" prefHeight="388.0" prefWidth="186.0" visible="false">
                      <children>
                         <Label layoutX="20.0" layoutY="39.0" text="Ime" />
                         <Label layoutX="6.0" layoutY="74.0" text="Prezime" />
                         <Label layoutX="9.0" layoutY="111.0" text="Telefon" />
                         <Label layoutX="15.0" layoutY="146.0" text="Email" />
-                        <ComboBox fx:id="companiesCombobox" layoutX="53.0" layoutY="170.0" prefHeight="25.0" prefWidth="125.0" />
                         <TextField fx:id="contactNameTxt" layoutX="52.0" layoutY="35.0" prefHeight="25.0" prefWidth="125.0" />
                         <TextField fx:id="contactLastnameTxt" layoutX="52.0" layoutY="69.0" prefHeight="25.0" prefWidth="125.0" />
                         <TextField fx:id="contactPhoneTxt" layoutX="52.0" layoutY="103.0" prefHeight="25.0" prefWidth="125.0" />
@@ -259,7 +258,6 @@
                               <Image url="@../../cloud-computing.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="13.0" layoutY="174.0" text="Tvrtka" />
                         <Label fx:id="contactErrorLbl" layoutX="10.0" layoutY="277.0" prefHeight="42.0" prefWidth="168.0" text="Došlo je do pogreške: dodavanje kontakta neuspješno" textAlignment="CENTER" textFill="#d70c0c" visible="false" wrapText="true" />
                         <Label fx:id="contactSuccessLbl" layoutX="26.0" layoutY="277.0" prefHeight="39.0" prefWidth="155.0" text="Uspješno ste dodali kontakt." textAlignment="CENTER" textFill="#039a4f" visible="false" wrapText="true" />
                         <Button fx:id="saveContactBtn" layoutX="46.0" layoutY="316.0" mnemonicParsing="false" onAction="#saveContact" prefHeight="25.0" prefWidth="128.0" text="Spremi" />
@@ -273,7 +271,6 @@
                           <Label fx:id="contactLbl" layoutX="5.0" layoutY="137.0" text="Pozivatelj" />
                           <TextField fx:id="titleTxt" layoutX="44.0" layoutY="26.0" prefHeight="25.0" prefWidth="148.0" />
                           <TextArea fx:id="noteTxt" layoutX="44.0" layoutY="59.0" prefHeight="68.0" prefWidth="148.0" />
-                          <ComboBox fx:id="contactsCombobox" layoutX="64.0" layoutY="134.0" prefHeight="25.0" prefWidth="126.0" />
                           <Button id="btn" fx:id="saveNoteBtn" layoutX="47.0" layoutY="201.0" mnemonicParsing="false" onAction="#saveNote" prefHeight="25.0" prefWidth="148.0" text="Spremi" />
                           <Button id="btn" fx:id="closeNoteBtn" layoutX="47.0" layoutY="237.0" mnemonicParsing="false" onAction="#closeNote" prefHeight="25.0" prefWidth="148.0" text="Odustani" />
                           <Label fx:id="noteSuccessLbl" layoutX="13.0" layoutY="171.0" prefHeight="17.0" prefWidth="180.0" text="Uspješno ste dodali novu poruku." textFill="#007206" visible="false" />

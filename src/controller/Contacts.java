@@ -184,7 +184,7 @@ public class Contacts implements Initializable {
         telephoneLbl.setVisible(true);
         emailLbl.setVisible(true);
         closeBtn.setVisible(true);
-        companies.setVisible(true);
+        contactImage.setVisible(true);
     }
     public void addContactToDatabase(javafx.event.ActionEvent actionEvent) throws SQLException {
         String email = this.emailTxt.getText().toString();

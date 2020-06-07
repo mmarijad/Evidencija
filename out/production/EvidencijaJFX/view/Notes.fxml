@@ -63,7 +63,7 @@
                         <Font size="16.0" />
                     </font>
                 </Label>
-                <Button fx:id="newNoteBtn" layoutX="314.0" layoutY="59.0" mnemonicParsing="false" onAction="#addNew" prefHeight="25.0" prefWidth="107.0" styleClass="btn" stylesheets="@../../style.css" text="Dodajte novu" textOverrun="CLIP" underline="true">
+                <Button fx:id="newNoteBtn" layoutX="314.0" layoutY="59.0" mnemonicParsing="false" onAction="#addNew" prefHeight="25.0" prefWidth="107.0" styleClass="company_button" stylesheets="@../../style.css" text="Dodajte novu" textOverrun="CLIP" underline="true">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
@@ -74,18 +74,41 @@
                 <TableColumn fx:id="unreadTextTblCol" prefWidth="360.0" text="Tekst" />
               </columns>
             </TableView>
-            <Button fx:id="deleteBtn" layoutX="524.0" layoutY="436.0" mnemonicParsing="false" onAction="#deleteNote" prefHeight="45.0" prefWidth="71.0" text="Izbriši" underline="true" />
-            <Button fx:id="markAsReadBtn" layoutX="407.0" layoutY="436.0" mnemonicParsing="false" onAction="#markAsRead" prefHeight="45.0" prefWidth="107.0" text="Označi kao pročitano" textAlignment="CENTER" underline="true" wrapText="true" />
-            <Button fx:id="showAllBtn" layoutX="286.0" layoutY="436.0" mnemonicParsing="false" onAction="#showAll" prefHeight="45.0" prefWidth="107.0" text="Prikaži sve" textAlignment="CENTER" underline="true" wrapText="true" />
-            <Button fx:id="markAsUnreadBtn" layoutX="408.0" layoutY="381.0" mnemonicParsing="false" onAction="#markAsUnread" prefHeight="45.0" prefWidth="107.0" text="Označi kao nepročitano" textAlignment="CENTER" underline="true" visible="false" wrapText="true" />
+            <Button fx:id="deleteBtn" layoutX="524.0" layoutY="436.0" mnemonicParsing="false" onAction="#deleteNote" prefHeight="45.0" prefWidth="71.0" text="Izbriši" underline="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="markAsReadBtn" layoutX="407.0" layoutY="436.0" mnemonicParsing="false" onAction="#markAsRead" prefHeight="45.0" prefWidth="107.0" text="Označi kao pročitano" textAlignment="CENTER" underline="true" wrapText="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="showAllBtn" layoutX="286.0" layoutY="436.0" mnemonicParsing="false" onAction="#showAll" prefHeight="45.0" prefWidth="107.0" text="Prikaži sve" textAlignment="CENTER" underline="true" wrapText="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="markAsUnreadBtn" layoutX="408.0" layoutY="438.0" mnemonicParsing="false" onAction="#markAsUnread" prefHeight="45.0" prefWidth="107.0" text="Označi kao nepročitano" textAlignment="CENTER" underline="true" visible="false" wrapText="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
             <TableView fx:id="allNotesTableView" layoutX="43.0" layoutY="117.0" opacity="0.8" prefHeight="309.0" prefWidth="641.0" visible="false">
                <columns>
                   <TableColumn fx:id="titleTblCol" prefWidth="280.0" text="Naslov" />
                   <TableColumn fx:id="textTblCol" prefWidth="272.0" text="Tekst" />
                </columns>
             </TableView>
-            <Button fx:id="showAll" layoutX="405.0" layoutY="435.0" mnemonicParsing="false" onAction="#showAll" prefHeight="45.0" prefWidth="107.0" text="Označi kao pročitano" textAlignment="CENTER" underline="true" visible="false" wrapText="true" />
-            <Button fx:id="showUnreadBtn" layoutX="288.0" layoutY="434.0" mnemonicParsing="false" onAction="#showUnread" prefHeight="45.0" prefWidth="107.0" text="Prikaži nepročitane" textAlignment="CENTER" underline="true" visible="false" wrapText="true" />
+            <Button fx:id="showAll" layoutX="405.0" layoutY="435.0" mnemonicParsing="false" onAction="#showAll" prefHeight="45.0" prefWidth="107.0" text="Označi kao pročitano" textAlignment="CENTER" underline="true" visible="false" wrapText="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="showUnreadBtn" layoutX="288.0" layoutY="434.0" mnemonicParsing="false" onAction="#showUnread" prefHeight="45.0" prefWidth="107.0" text="Prikaži nepročitane" textAlignment="CENTER" underline="true" visible="false" wrapText="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="deleteBtn1" layoutX="524.0" layoutY="436.0" mnemonicParsing="false" onAction="#deleteNote1" prefHeight="45.0" prefWidth="71.0" text="Izbriši" underline="true" visible="false">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
             </children>
             <cursor>
                 <Cursor fx:constant="DEFAULT" />

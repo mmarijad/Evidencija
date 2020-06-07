@@ -26,6 +26,8 @@ public class NotesController implements Initializable {
     @FXML
     Button deleteBtn;
     @FXML
+    Button deleteBtn1;
+    @FXML
     Button markAsReadBtn;
     @FXML
     Button markAsUnreadBtn;
@@ -98,7 +100,6 @@ public class NotesController implements Initializable {
         contactLbl.setVisible(true);
         nameTxt.setVisible(true);
         noteTxt.setVisible(true);
-        contactsChoicebox.setVisible(true);
         newNoteBtn.setVisible(false);
     }
     public void save(ActionEvent ev){
@@ -181,6 +182,14 @@ public class NotesController implements Initializable {
         Note n = unreadNotesTableView.getSelectionModel().getSelectedItem();
         n.delete();
         this.populateUnreadNotesTableView();
+        this.populateAllNotesTableView();
+    }
+    @FXML
+    public void deleteNote1 (ActionEvent ev) throws Exception {
+        Note n = allNotesTableView.getSelectionModel().getSelectedItem();
+        n.delete();
+        this.populateUnreadNotesTableView();
+        this.populateAllNotesTableView();
     }
     @FXML
     public void markAsRead (ActionEvent ev) throws Exception {
@@ -205,6 +214,8 @@ public class NotesController implements Initializable {
         markAsReadBtn.setVisible(false);
         allNotesTableView.setVisible(true);
         notesLbl.setText("Sve poruke");
+        deleteBtn.setVisible(true);
+        deleteBtn1.setVisible(false);
     }
 
     public void showUnread(ActionEvent actionEvent) {
@@ -215,6 +226,8 @@ public class NotesController implements Initializable {
         markAsReadBtn.setVisible(true);
         allNotesTableView.setVisible(false);
         notesLbl.setText("Nepročitane poruke");
+        deleteBtn1.setVisible(true);
+        deleteBtn.setVisible(false);
     }
 }
 

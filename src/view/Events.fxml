@@ -80,31 +80,31 @@
             <ComboBox fx:id="hoursComboBox" layoutX="26.0" layoutY="451.0" prefHeight="25.0" prefWidth="84.0" style="-fx-background-color: #fff;" visible="false" />
             <ComboBox fx:id="minutesComboBox" layoutX="119.0" layoutY="452.0" prefHeight="25.0" prefWidth="84.0" style="-fx-background-color: #fff;" visible="false" />
          </children></Pane>
-      <Pane layoutX="229.0" layoutY="75.0" opacity="0.8" prefHeight="530.0" prefWidth="689.0" style="-fx-border-color: #fff; -fx-background-color: #e3f7fe;">
+      <Pane layoutX="229.0" layoutY="78.0" opacity="0.8" prefHeight="527.0" prefWidth="767.0" style="-fx-border-color: #fff; -fx-background-color: #e3f7fe;">
          <children>
-            <Label layoutX="302.0" layoutY="7.0" prefHeight="57.0" prefWidth="93.0" text="Svi događaji" textAlignment="CENTER" wrapText="true">
+            <Label layoutX="354.0" layoutY="7.0" prefHeight="57.0" prefWidth="93.0" text="Svi događaji" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Button fx:id="newEventBtn" layoutX="295.0" layoutY="73.0" mnemonicParsing="false" onAction="#addNew" prefHeight="25.0" prefWidth="107.0" styleClass="btn" stylesheets="@../../style.css" text="Dodajte novi" textOverrun="CLIP" underline="true">
+            <Button fx:id="newEventBtn" layoutX="341.0" layoutY="73.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#addNew" prefHeight="25.0" prefWidth="107.0" styleClass="company_button" stylesheets="@../../style.css" text="Dodajte novi" textOverrun="CLIP" underline="true">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <TableView fx:id="tableView" editable="true" layoutX="21.0" layoutY="120.0" opacity="0.81" prefHeight="324.0" prefWidth="643.0" style="-fx-border-color: #fff;">
+            <TableView fx:id="tableView" editable="true" layoutX="21.0" layoutY="120.0" opacity="0.81" prefHeight="324.0" prefWidth="750.0" style="-fx-border-color: #fff;">
               <columns>
-                <TableColumn fx:id="nameTblClmn" onEditCommit="#editEventName" prefWidth="154.0" style="-fx-border-color: #fff;" text="Naziv" />
-                <TableColumn fx:id="descriptionTblClmn" minWidth="0.0" onEditCommit="#editEventDescription" prefWidth="183.0" style="-fx-border-color: #fff;" text="Opis" />
-                  <TableColumn fx:id="placeTblClmn" onEditCommit="#editEventPlace" prefWidth="133.0" style="-fx-border-color: #fff;" text="Mjesto" />
-                  <TableColumn fx:id="timeTblClmn" prefWidth="171.0" style="-fx-border-color: #fff;" text="Vrijeme" />
+                <TableColumn fx:id="nameTblClmn" onEditCommit="#editEventName" prefWidth="188.0" style="-fx-border-color: #fff;" text="Naziv" />
+                <TableColumn fx:id="descriptionTblClmn" minWidth="0.0" onEditCommit="#editEventDescription" prefWidth="214.0" style="-fx-border-color: #fff;" text="Opis" />
+                  <TableColumn fx:id="placeTblClmn" onEditCommit="#editEventPlace" prefWidth="163.0" style="-fx-border-color: #fff;" text="Mjesto" />
+                  <TableColumn fx:id="timeTblClmn" prefWidth="182.0" style="-fx-border-color: #fff;" text="Vrijeme" />
               </columns>
             </TableView>
-            <Button fx:id="deleteBtn" layoutX="609.0" layoutY="456.0" mnemonicParsing="false" onAction="#deleteEvent" opacity="0.8" prefHeight="32.0" prefWidth="53.0" styleClass="btn" stylesheets="@../../style.css" text="Obriši">
+            <Button fx:id="deleteBtn" layoutX="674.0" layoutY="456.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#deleteEvent" opacity="0.8" prefHeight="32.0" prefWidth="53.0" styleClass="btn" stylesheets="@../../style.css" text="Obriši">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button fx:id="reminderBtn" disable="true" layoutX="480.0" layoutY="455.0" mnemonicParsing="false" onAction="#createReminderForEvent" opacity="0.8" prefHeight="32.0" prefWidth="117.0" styleClass="btn" stylesheets="@../../style.css" text="Kreiraj podsjetnik">
+            <Button fx:id="reminderBtn" disable="true" layoutX="545.0" layoutY="455.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#createReminderForEvent" opacity="0.8" prefHeight="32.0" prefWidth="117.0" styleClass="btn" stylesheets="@../../style.css" text="Kreiraj podsjetnik">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -117,17 +117,23 @@
                   <Font size="13.0" />
                </font>
             </Label>
-            <Button fx:id="showUpcomingBtn" layoutX="354.0" layoutY="456.0" mnemonicParsing="false" onAction="#showUpcoming" prefHeight="32.0" prefWidth="117.0" text="Prikaži nadolazeće" />
-            <Button fx:id="showAllBtn" layoutX="354.0" layoutY="456.0" mnemonicParsing="false" onAction="#showAll" prefHeight="32.0" prefWidth="117.0" text="Prikaži sve" visible="false" />
-            <TableView fx:id="upcomingTableView" editable="true" layoutX="20.0" layoutY="118.0" opacity="0.81" prefHeight="324.0" prefWidth="643.0" style="-fx-border-color: #fff;" visible="false">
+            <Button fx:id="showUpcomingBtn" layoutX="419.0" layoutY="456.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#showUpcoming" prefHeight="32.0" prefWidth="117.0" text="Prikaži nadolazeće">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="showAllBtn" layoutX="419.0" layoutY="456.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#showAll" prefHeight="32.0" prefWidth="117.0" text="Prikaži sve" visible="false">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <TableView fx:id="upcomingTableView" editable="true" layoutX="20.0" layoutY="118.0" opacity="0.81" prefHeight="324.0" prefWidth="750.0" style="-fx-border-color: #fff;" visible="false">
                <columns>
-                  <TableColumn fx:id="UnameTblClmn" prefWidth="154.0" style="-fx-border-color: #fff;" text="Naziv" />
-                  <TableColumn fx:id="UdescriptionTblClmn" minWidth="0.0" prefWidth="183.0" style="-fx-border-color: #fff;" text="Opis" />
-                  <TableColumn fx:id="UplaceTblClmn" prefWidth="133.0" style="-fx-border-color: #fff;" text="Mjesto" />
-                  <TableColumn fx:id="UtimeTblClmn" prefWidth="171.0" style="-fx-border-color: #fff;" text="Vrijeme" />
+                  <TableColumn fx:id="UnameTblClmn" prefWidth="169.0" style="-fx-border-color: #fff;" text="Naziv" />
+                  <TableColumn fx:id="UdescriptionTblClmn" minWidth="0.0" prefWidth="186.0" style="-fx-border-color: #fff;" text="Opis" />
+                  <TableColumn fx:id="UplaceTblClmn" prefWidth="185.0" style="-fx-border-color: #fff;" text="Mjesto" />
+                  <TableColumn fx:id="UtimeTblClmn" prefWidth="206.0" style="-fx-border-color: #fff;" text="Vrijeme" />
                </columns>
             </TableView>
-            <Button fx:id="deleteBtn1" layoutX="609.0" layoutY="456.0" mnemonicParsing="false" onAction="#deleteEvent1" opacity="0.8" prefHeight="32.0" prefWidth="53.0" styleClass="btn" stylesheets="@../../style.css" text="Obriši" visible="false">
+            <Button fx:id="deleteBtn1" layoutX="673.0" layoutY="456.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#deleteEvent1" opacity="0.8" prefHeight="32.0" prefWidth="53.0" styleClass="btn" stylesheets="@../../style.css" text="Obriši" visible="false">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

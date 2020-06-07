@@ -84,8 +84,7 @@ public class UserController implements Initializable {
     Label contactSuccessLbl;
     @FXML
     ImageView contactImage;
-    @FXML
-    ComboBox <Company> companiesCombobox;
+
     BufferedImage buffImage;
     Image initialImage;
     @FXML
@@ -96,8 +95,6 @@ public class UserController implements Initializable {
     TextField titleTxt;
     @FXML
     TextArea noteTxt;
-    @FXML
-    ComboBox contactsCombobox;
     @FXML
     Label helloLbl;
     @FXML
@@ -218,6 +215,7 @@ public class UserController implements Initializable {
 
     public void addEvent(ActionEvent ev) {
         eventPane.setVisible(true);
+        datePicker.setValue(LocalDate.now());
     }
     public void saveEvent(ActionEvent ev){
         String name = this.eventNameTxt.getText().toString();
@@ -341,7 +339,9 @@ public class UserController implements Initializable {
         try {
             this.reminderLbl.setText("Podsjetnik" + "\n"+ Event.reminder().getName() + "\n" + Event.reminder().getTime()+ "\n" + Event.reminder().getPlace());
         } catch (Exception e) {
+           reminderLbl.setText("Nemate podsjetnika.");
             e.printStackTrace();
+            System.out.println("Nema novih podsjetnika.");
         }
         ObservableList<Integer> elements = FXCollections.observableArrayList(
                 new Integer(7),

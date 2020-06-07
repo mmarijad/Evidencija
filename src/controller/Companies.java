@@ -31,6 +31,10 @@ public class Companies implements Initializable {
     Button closeBtn;
     @FXML
     Button deleteBtn;
+    @FXML
+    TextField phoneTxt;
+    @FXML
+    TableColumn <Company, String> phoneTblCol;
 
     @FXML
     public void backToMain(ActionEvent actionEvent) {
@@ -75,15 +79,24 @@ public class Companies implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         this.nameTblCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+        this.phoneTblCol.setCellValueFactory(new PropertyValueFactory<>("phone"));
         populateTableView();
         companiesTblView.setEditable(true);
         this.nameTblCol.setEditable(true);
         this.nameTblCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        this.phoneTblCol.setEditable(true);
+        this.phoneTblCol.setCellFactory(TextFieldTableCell.forTableColumn());
     }
     @FXML
     public void editName (TableColumn.CellEditEvent<Company, String> evt) throws Exception {
         Company c = evt.getRowValue();
         c.setName(evt.getNewValue());
+        c.update();
+    }
+    @FXML
+    public void editPhone (TableColumn.CellEditEvent<Company, String> evt) throws Exception {
+        Company c = evt.getRowValue();
+        c.setPhone(evt.getNewValue());
         c.update();
     }
     private void populateTableView() { try {

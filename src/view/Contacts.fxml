@@ -85,7 +85,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="newUserBtn" layoutX="358.0" layoutY="87.0" mnemonicParsing="false" onAction="#addNew" prefHeight="39.0" prefWidth="196.0" styleClass="btn" text="Dodajte novi" underline="true">
+            <Button fx:id="newUserBtn" layoutX="358.0" layoutY="87.0" mnemonicParsing="false" onAction="#addNew" prefHeight="39.0" prefWidth="196.0" styleClass="company_button" text="Dodajte novi" underline="true">
                <font>
                   <Font size="14.0" />
                </font>

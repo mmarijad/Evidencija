@@ -7,6 +7,9 @@ public class Company extends Table {
     @Entity(type = "VARCHAR", size = 50, primary = false, isnull = false)
     String name;
 
+    @Entity(type = "VARCHAR", size = 50, primary = false, isnull = false)
+    String phone;
+
     public String getName() { return name; }
 
     @Override public String toString() { return this.getName(); }
@@ -17,4 +20,11 @@ public class Company extends Table {
         return id;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 }

@@ -13,7 +13,7 @@
 
 <AnchorPane id="pane2" prefHeight="556.0" prefWidth="721.0" stylesheets="@../../style.css" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Companies">
 
-    <Pane layoutY="-6.0" opacity="0.8" prefHeight="563.0" prefWidth="230.0" style="-fx-background-color: #e3f7fe; -fx-border-color: #fff;">
+    <Pane layoutY="-6.0" opacity="0.8" prefHeight="641.0" prefWidth="230.0" style="-fx-background-color: #e3f7fe; -fx-border-color: #fff;">
         <children>
             <Pane layoutX="37.0" layoutY="32.0" prefHeight="89.0" prefWidth="168.0" style="-fx-border-color: #fff;">
                 <children>
@@ -43,19 +43,21 @@
                     <Cursor fx:constant="HAND" />
                 </cursor>
             </Button>
-         <Label fx:id="successLbl" layoutX="20.0" layoutY="412.0" prefHeight="44.0" prefWidth="186.0" text="Uspješno ste dodali novu tvrtku u bazu podataka" textAlignment="CENTER" textFill="#048a35" visible="false" wrapText="true" />
-         <Label fx:id="errorLbl" layoutX="44.0" layoutY="418.0" prefHeight="32.0" prefWidth="147.0" text="Došlo je do pogreške" textFill="#8a0a0a" visible="false" />
-         <TextField fx:id="nameTxt" layoutX="33.0" layoutY="328.0" prefHeight="25.0" prefWidth="168.0" visible="false" />
-         <Button fx:id="saveBtn" layoutX="53.0" layoutY="358.0" mnemonicParsing="false" onAction="#save" prefHeight="25.0" prefWidth="126.0" stylesheets="@../../style.css" text="Spremi" visible="false" />
+         <Label fx:id="successLbl" layoutX="20.0" layoutY="433.0" prefHeight="44.0" prefWidth="186.0" text="Uspješno ste dodali novu tvrtku u bazu podataka" textAlignment="CENTER" textFill="#048a35" visible="false" wrapText="true" />
+         <Label fx:id="errorLbl" layoutX="44.0" layoutY="436.0" prefHeight="32.0" prefWidth="147.0" text="Došlo je do pogreške" textFill="#8a0a0a" visible="false" />
+         <TextField fx:id="nameTxt" layoutX="33.0" layoutY="306.0" prefHeight="25.0" prefWidth="168.0" promptText="naziv" visible="false" />
+         <Button fx:id="saveBtn" layoutX="53.0" layoutY="372.0" mnemonicParsing="false" onAction="#save" prefHeight="25.0" prefWidth="126.0" stylesheets="@../../style.css" text="Spremi" visible="false" />
          <Button fx:id="contactsBtn" layoutX="32.0" layoutY="258.0" mnemonicParsing="false" onAction="#goToContacts" prefHeight="32.0" prefWidth="168.0" stylesheets="@../../style.css" text="Kontakti" />
-         <Button fx:id="closeBtn" layoutX="54.0" layoutY="388.0" mnemonicParsing="false" onAction="#close" prefHeight="25.0" prefWidth="126.0" stylesheets="@../../style.css" text="Odustani" visible="false" />
+         <Button fx:id="closeBtn" layoutX="54.0" layoutY="406.0" mnemonicParsing="false" onAction="#close" prefHeight="25.0" prefWidth="126.0" stylesheets="@../../style.css" text="Odustani" visible="false" />
+         <TextField fx:id="phoneTxt" layoutX="33.0" layoutY="339.0" prefHeight="25.0" prefWidth="168.0" promptText="telefon" visible="false" />
 
            </children></Pane>
-   <ScrollPane layoutX="320.0" layoutY="67.0" prefHeight="427.0" prefWidth="321.0">
+   <ScrollPane layoutX="283.0" layoutY="67.0" opacity="0.5" prefHeight="427.0" prefWidth="413.0" style="-fx-background-color: #e3f7fe;">
       <content>
-         <TableView fx:id="companiesTblView" opacity="0.8" prefHeight="421.0" prefWidth="323.0">
+         <TableView fx:id="companiesTblView" prefHeight="413.0" prefWidth="414.0">
            <columns>
-             <TableColumn fx:id="nameTblCol" onEditCommit="#editName" prefWidth="313.0" text="Naziv" />
+             <TableColumn fx:id="nameTblCol" onEditCommit="#editName" prefWidth="200.0" text="Naziv" />
+               <TableColumn fx:id="phoneTblCol" onEditCommit="#editPhone" prefWidth="207.0" text="Telefon" />
            </columns>
          </TableView>
       </content>
@@ -65,7 +67,7 @@
          <Font size="17.0" />
       </font>
    </Label>
-   <Button fx:id="deleteBtn" layoutX="574.0" layoutY="509.0" mnemonicParsing="false" onAction="#delete" styleClass="company_button" stylesheets="@../../style.css" text="Izbriši">
+   <Button fx:id="deleteBtn" layoutX="635.0" layoutY="509.0" mnemonicParsing="false" onAction="#delete" styleClass="company_button" stylesheets="@../../style.css" text="Izbriši">
       <cursor>
          <Cursor fx:constant="HAND" />
       </cursor></Button>
